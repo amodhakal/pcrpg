@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://i6xuywxd8ti1"]
+[gd_scene load_steps=3 format=3 uid="uid://i6xuywxd8ti1"]
 
 [ext_resource type="PackedScene" uid="uid://5s8u6abf4msm" path="res://components/WaterTiled.tscn" id="1_8xn6n"]
+[ext_resource type="Texture2D" uid="uid://dvo51eeiw0j4e" path="res://images/MainSwimming.png" id="2_0pqsl"]
 
 [node name="FirstLocation" type="Node2D"]
 position = Vector2(-22, 36)
 
 [node name="WaterTiled" parent="." instance=ExtResource("1_8xn6n")]
+
+[node name="Protagonist" type="Node2D" parent="."]
+
+[node name="MainSwimming" type="Sprite2D" parent="Protagonist"]
+position = Vector2(274, 451)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_0pqsl")
