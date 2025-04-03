@@ -1,0 +1,125 @@
+[gd_scene load_steps=2 format=3 uid="uid://5s8u6abf4msm"]
+
+[ext_resource type="Texture2D" uid="uid://bx1q7kugcbm2v" path="res://images/WaterTile.png" id="1_0cnv6"]
+
+[node name="WaterTiled" type="Node2D"]
+
+[node name="WaterTile" type="Sprite2D" parent="."]
+position = Vector2(73, 58)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile2" type="Sprite2D" parent="."]
+position = Vector2(282, 58)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile3" type="Sprite2D" parent="."]
+position = Vector2(490.5, 57.5)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile4" type="Sprite2D" parent="."]
+position = Vector2(699.5, 57.5)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile5" type="Sprite2D" parent="."]
+position = Vector2(900.5, 58.5)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile6" type="Sprite2D" parent="."]
+position = Vector2(1109.5, 58.5)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile7" type="Sprite2D" parent="."]
+position = Vector2(73.5, 265)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile8" type="Sprite2D" parent="."]
+position = Vector2(282.5, 265)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile9" type="Sprite2D" parent="."]
+position = Vector2(491, 264.5)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile10" type="Sprite2D" parent="."]
+position = Vector2(700, 264.5)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile11" type="Sprite2D" parent="."]
+position = Vector2(901, 265.5)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile12" type="Sprite2D" parent="."]
+position = Vector2(1110, 265.5)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile13" type="Sprite2D" parent="."]
+position = Vector2(73.5, 474)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile14" type="Sprite2D" parent="."]
+position = Vector2(282.5, 474)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile15" type="Sprite2D" parent="."]
+position = Vector2(491, 473.5)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile16" type="Sprite2D" parent="."]
+position = Vector2(700, 473.5)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile17" type="Sprite2D" parent="."]
+position = Vector2(901, 474.5)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile18" type="Sprite2D" parent="."]
+position = Vector2(1110, 474.5)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile19" type="Sprite2D" parent="."]
+position = Vector2(74, 681)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile20" type="Sprite2D" parent="."]
+position = Vector2(283, 681)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile21" type="Sprite2D" parent="."]
+position = Vector2(491.5, 680.5)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile22" type="Sprite2D" parent="."]
+position = Vector2(700.5, 680.5)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile23" type="Sprite2D" parent="."]
+position = Vector2(901.5, 681.5)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
+
+[node name="WaterTile24" type="Sprite2D" parent="."]
+position = Vector2(1110.5, 681.5)
+scale = Vector2(0.102051, 0.102051)
+texture = ExtResource("1_0cnv6")
