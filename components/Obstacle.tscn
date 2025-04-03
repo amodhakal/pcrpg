@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl6m2vlcsff2w"]
+
+[ext_resource type="Script" path="res://components/Obstacle.gd" id="1_gb177"]
+[ext_resource type="Texture2D" uid="uid://cpia0y5l3eill" path="res://images/log.png" id="1_x3ce2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5snh"]
+size = Vector2(142, 309)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6dvow"]
+radius = 29.1548
+
+[node name="Obstacle" type="Area2D"]
+script = ExtResource("1_gb177")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(0.36, 0.517651)
+shape = SubResource("RectangleShape2D_s5snh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(9.53674e-07, 75)
+scale = Vector2(0.864256, 0.476947)
+shape = SubResource("CircleShape2D_6dvow")
+
+[node name="Log" type="Sprite2D" parent="."]
+rotation = -1.5708
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_x3ce2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
