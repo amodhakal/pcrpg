@@ -11,6 +11,6 @@ func _physics_process(delta):
 		velocity.y = JUMP
 		
 	# TODO: For now
-	velocity.x += delta * 50
+	velocity.x = delta * 10_000
 
 	move_and_slide()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cl6m2vlcsff2w"]
 
-[ext_resource type="Script" path="res://components/Obstacle.gd" id="1_gb177"]
+[ext_resource type="Script" path="res://scripts/Obstacle.gd" id="1_gb177"]
 [ext_resource type="Texture2D" uid="uid://cpia0y5l3eill" path="res://images/log.png" id="1_x3ce2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5snh"]
