@@ -32,3 +32,11 @@ func generate_obstacles() -> Array[Area2D]:
 		obstacles.push_back(obstacleBottom)
 		
 	return obstacles
+
+
+func _on_collisions_body_entered(body: Node2D) -> void:
+	if body.name != "Character":
+		return
+	
+	# TODO: Handle collision
+	print("Game Over")

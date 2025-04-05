@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://70aq6wpfg6r"]
+
+[ext_resource type="Texture2D" uid="uid://bx1q7kugcbm2v" path="res://images/WaterTile.png" id="1_0cnv6"]
+
+[node name="WaterTiled" type="Node2D"]
+
+[node name="WaterTile" type="TextureRect" parent="."]
+texture_repeat = 2
+offset_left = -1.52588e-05
+offset_top = -1.52588e-05
+offset_right = 5760.0
+offset_bottom = 2950.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_0cnv6")
+stretch_mode = 1
