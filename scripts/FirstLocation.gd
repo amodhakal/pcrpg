@@ -30,7 +30,5 @@ func generate_obstacles() -> Array[Area2D]:
 		
 		obstacles.push_back(obstacleTop)
 		obstacles.push_back(obstacleBottom)
-
-		
 		
 	return obstacles

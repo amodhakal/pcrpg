@@ -1,16 +1,74 @@
-[gd_scene load_steps=4 format=3 uid="uid://i6xuywxd8ti1"]
+[gd_scene load_steps=5 format=3 uid="uid://i6xuywxd8ti1"]
 
-[ext_resource type="PackedScene" uid="uid://5s8u6abf4msm" path="res://components/WaterTiled.tscn" id="1_8xn6n"]
 [ext_resource type="Script" path="res://scripts/FirstLocation.gd" id="1_w18b5"]
 [ext_resource type="PackedScene" uid="uid://5m41otf61onj" path="res://components/Character.tscn" id="2_7u7ew"]
+[ext_resource type="Script" path="res://scripts/Camera.gd" id="4_b6o5m"]
+[ext_resource type="Texture2D" uid="uid://bx1q7kugcbm2v" path="res://images/WaterTile.png" id="4_f28q1"]
 
 [node name="FirstLocation" type="Node2D"]
 position = Vector2(-22, 36)
 script = ExtResource("1_w18b5")
 
-[node name="WaterTiled" parent="." instance=ExtResource("1_8xn6n")]
-position = Vector2(40, -12)
-scale = Vector2(0.935916, 0.821831)
-
 [node name="Character" parent="." instance=ExtResource("2_7u7ew")]
-position = Vector2(111, 186)
+position = Vector2(112, 186)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(598, 288)
+script = ExtResource("4_b6o5m")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2(0, 500)
+transform = Transform2D(1, 0, 0, 1, 0, 500)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(204, 204)
+
+[node name="WaterTile" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(100, -401)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_f28q1")
+
+[node name="WaterTile2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(509, -401)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_f28q1")
+
+[node name="WaterTile3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(917, -401)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_f28q1")
+
+[node name="WaterTile4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(100.4, 7.4)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_f28q1")
+
+[node name="WaterTile5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(509.4, 7.4)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_f28q1")
+
+[node name="WaterTile6" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(917.4, 7.4)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_f28q1")
+
+[node name="WaterTile7" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1326.4, -400.6)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_f28q1")
+
+[node name="WaterTile8" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1325.8, 6.80001)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_f28q1")
+
+[node name="WaterTile9" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1325.4, -401.6)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_f28q1")
+
+[node name="WaterTile10" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1325.8, 6.80001)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_f28q1")
