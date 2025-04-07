@@ -27,12 +27,36 @@ distance = -231.0
 position = Vector2(-22, 36)
 script = ExtResource("1_w18b5")
 
-[node name="Character" parent="." instance=ExtResource("2_7u7ew")]
-position = Vector2(112, 186)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(598, 288)
 script = ExtResource("4_b6o5m")
+
+[node name="Lost" type="Label" parent="Camera2D"]
+visible = false
+z_index = 10
+offset_left = -202.0
+offset_top = -132.0
+offset_right = 212.0
+offset_bottom = 5.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.796078)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "You lost!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" type="Button" parent="Camera2D"]
+visible = false
+z_index = 10
+offset_left = -139.0
+offset_top = 4.0
+offset_right = 170.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 30
+text = "Restart Game"
+
+[node name="Character" parent="." instance=ExtResource("2_7u7ew")]
+position = Vector2(112, 186)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(0, 500)
@@ -122,4 +146,5 @@ shape = SubResource("WorldBoundaryShape2D_ttu3s")
 position = Vector2(-16, 382)
 shape = SubResource("WorldBoundaryShape2D_4dp74")
 
+[connection signal="pressed" from="Camera2D/Restart" to="." method="_on_resstart_pressed"]
 [connection signal="body_entered" from="Collisions" to="." method="_on_collisions_body_entered"]
