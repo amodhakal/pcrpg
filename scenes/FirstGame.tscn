@@ -55,6 +55,16 @@ offset_bottom = 64.0
 theme_override_font_sizes/font_size = 30
 text = "Restart Game"
 
+[node name="Label" type="Label" parent="Camera2D"]
+z_index = 10
+offset_left = -541.0
+offset_top = -300.0
+offset_right = -309.0
+offset_bottom = -245.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "0/70 logs passed"
+
 [node name="Character" parent="." instance=ExtResource("2_7u7ew")]
 position = Vector2(112, 186)
 
@@ -66,7 +76,7 @@ transform = Transform2D(1, 0, 0, 1, 0, 500)
 motion_mirroring = Vector2(204, 204)
 
 [node name="WaterTile" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(100, -401)
+position = Vector2(101.4, -400.6)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_f28q1")
 
@@ -81,7 +91,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_f28q1")
 
 [node name="WaterTile4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(100.4, 7.4)
+position = Vector2(101.8, 7.8)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_f28q1")
 
@@ -106,7 +116,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_f28q1")
 
 [node name="WaterTile11" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(100.4, 414)
+position = Vector2(101.8, 414.4)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_f28q1")
 

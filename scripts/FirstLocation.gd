@@ -2,19 +2,27 @@ extends Node2D
 
 signal gameOver
 
+const VIEWPORT_WIDTH = 1152
+const VIEWPORT_HEIGHT = 590
+const LOG_DISTANCE_X = VIEWPORT_WIDTH / 4
+const LOG_COUNT = 70
+
 @onready var OBSTACLE = preload("res://components/Obstacle.tscn")
+@onready var BEACH = preload("res://components/Beach.tscn")
+
 @onready var CHARACTER = $Character
 @onready var COLLISIONS = $Collisions
 @onready var LOST_TEXT = $Camera2D/Lost
 @onready var RESTART_BTN = $Camera2D/Restart
 
-const VIEWPORT_WIDTH = 1152
-const VIEWPORT_HEIGHT = 590
-
 func _ready() -> void:
 	var obstacles = generate_obstacles()
 	for obstacle in obstacles:
 		self.add_child(obstacle)
+		
+	var beach:Area2D = BEACH.instantiate()
+	beach.position = Vector2(LOG_DISTANCE_X * (LOG_COUNT + 5), VIEWPORT_HEIGHT / 2)
+	self.add_child(beach)
 
 	self.gameOver.connect(CHARACTER.emitGameOver.bind())
 	
@@ -30,10 +38,9 @@ func emitGameOver():
 		RESTART_BTN.visible = true
 		
 func generate_obstacles() -> Array[Area2D]:
-	const LOG_DISTANCE_X = VIEWPORT_WIDTH / 4
 	var obstacles: Array[Area2D]  = []
 
-	for leftXPosition in range(2 * LOG_DISTANCE_X, LOG_DISTANCE_X * 100, LOG_DISTANCE_X):
+	for leftXPosition in range(2 * LOG_DISTANCE_X, LOG_DISTANCE_X * LOG_COUNT, LOG_DISTANCE_X):
 		var topScale = randf() * 2 + 1
 		var bottomScale = 4.5 - topScale
 
