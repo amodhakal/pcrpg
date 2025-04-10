@@ -2,6 +2,7 @@ extends Camera2D
 
 const VIEWPORT_WIDTH = 1152
 const VIEWPORT_HEIGHT = 590
+
 @export var TARGET_PATH: NodePath = "../Character"
 @export var yPosition: float = VIEWPORT_HEIGHT / 2
 @export var PREDICT: float = 0.5

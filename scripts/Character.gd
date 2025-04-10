@@ -1,8 +1,37 @@
 extends CharacterBody2D
 
 const JUMP = -350
+const VIEWPORT_WIDTH = 1152
+const LOG_DISTANCE_X = VIEWPORT_WIDTH / 4
+const INITIAL_LOG_X = LOG_DISTANCE_X * 2 + 50
+
+@onready var logsLabel = $"../Camera2D/Label"
+	
+var logsPassed = 0
+var previousX = 0
 var GRAVITY = ProjectSettings.get_setting("physics/2d/default_gravity")
 var isGameOver = false
+
+func _process(delta):
+	var currentX = self.position.x
+	
+	if logsPassed == 0:
+		if currentX > INITIAL_LOG_X:
+			if logsPassed < 70:
+				logsPassed += 1
+				
+			logsLabel.text = str(logsPassed) + "/70 logs passed"
+			previousX = currentX
+		
+	else:
+		if currentX > previousX + LOG_DISTANCE_X:
+			if logsPassed < 70:
+				logsPassed += 1
+				
+			logsLabel.text = str(logsPassed) + "/70 logs passed"
+			previousX = currentX			
+	
+
 
 func _physics_process(delta):
 	if (isGameOver):

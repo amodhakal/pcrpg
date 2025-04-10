@@ -55,6 +55,16 @@ offset_bottom = 64.0
 theme_override_font_sizes/font_size = 30
 text = "Restart Game"
 
+[node name="Label" type="Label" parent="Camera2D"]
+z_index = 10
+offset_left = -541.0
+offset_top = -300.0
+offset_right = -309.0
+offset_bottom = -245.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "0/70 logs passed"
+
 [node name="Character" parent="." instance=ExtResource("2_7u7ew")]
 position = Vector2(112, 186)
 
