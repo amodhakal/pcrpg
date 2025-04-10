@@ -33,7 +33,7 @@ func generate_obstacles() -> Array[Area2D]:
 	const LOG_DISTANCE_X = VIEWPORT_WIDTH / 4
 	var obstacles: Array[Area2D]  = []
 
-	for leftXPosition in range(2 * LOG_DISTANCE_X, LOG_DISTANCE_X * 100, LOG_DISTANCE_X):
+	for leftXPosition in range(2 * LOG_DISTANCE_X, LOG_DISTANCE_X * 70, LOG_DISTANCE_X):
 		var topScale = randf() * 2 + 1
 		var bottomScale = 4.5 - topScale
 

@@ -66,7 +66,7 @@ transform = Transform2D(1, 0, 0, 1, 0, 500)
 motion_mirroring = Vector2(204, 204)
 
 [node name="WaterTile" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(100, -401)
+position = Vector2(101.4, -400.6)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_f28q1")
 
@@ -81,7 +81,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_f28q1")
 
 [node name="WaterTile4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(100.4, 7.4)
+position = Vector2(101.8, 7.8)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_f28q1")
 
@@ -106,7 +106,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_f28q1")
 
 [node name="WaterTile11" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(100.4, 414)
+position = Vector2(101.8, 414.4)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_f28q1")
 
