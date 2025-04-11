@@ -5,7 +5,7 @@ signal gameOver
 const VIEWPORT_WIDTH = 1152
 const VIEWPORT_HEIGHT = 590
 const LOG_DISTANCE_X = VIEWPORT_WIDTH / 4
-const LOG_COUNT = 70
+const LOG_COUNT = 50
 
 @onready var OBSTACLE = preload("res://components/Obstacle.tscn")
 @onready var BEACH = preload("res://components/Beach.tscn")

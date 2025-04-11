@@ -17,18 +17,18 @@ func _process(delta):
 	
 	if logsPassed == 0:
 		if currentX > INITIAL_LOG_X:
-			if logsPassed < 70:
+			if logsPassed < 48:
 				logsPassed += 1
 				
-			logsLabel.text = str(logsPassed) + "/70 logs passed"
+			logsLabel.text = str(logsPassed) + "/48 logs passed"
 			previousX = currentX
 		
 	else:
 		if currentX > previousX + LOG_DISTANCE_X:
-			if logsPassed < 70:
+			if logsPassed < 48:
 				logsPassed += 1
 				
-			logsLabel.text = str(logsPassed) + "/70 logs passed"
+			logsLabel.text = str(logsPassed) + "/48 logs passed"
 			previousX = currentX			
 	
 
