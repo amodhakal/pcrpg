@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biyafr38f362q"
-path="res://.godot/imported/lightpirateguntwo.png-f0562373790295623246e0ae58da1ef7.ctex"
+uid="uid://c6y8boo60pdpw"
+path="res://.godot/imported/bloodpirate.png-4ac486cd642ed769bda9c8b8efb95a6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/lightpirateguntwo.png"
-dest_files=["res://.godot/imported/lightpirateguntwo.png-f0562373790295623246e0ae58da1ef7.ctex"]
+source_file="res://images/bloodpirate.png"
+dest_files=["res://.godot/imported/bloodpirate.png-4ac486cd642ed769bda9c8b8efb95a6a.ctex"]
 
 [params]
 

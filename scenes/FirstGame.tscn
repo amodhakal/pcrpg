@@ -63,7 +63,7 @@ offset_right = -309.0
 offset_bottom = -245.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "0/70 logs passed"
+text = "0/48 logs passed"
 
 [node name="Character" parent="." instance=ExtResource("2_7u7ew")]
 position = Vector2(112, 186)

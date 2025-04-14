@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c328at2msejik"
-path="res://.godot/imported/bandanapiratesword.png-225b699f7c2428e36507c0f59029f2c7.ctex"
+uid="uid://xsr0tnpkgubq"
+path="res://.godot/imported/crosshair.png-158d3b9e1b8650994ded77b707486b76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/bandanapiratesword.png"
-dest_files=["res://.godot/imported/bandanapiratesword.png-225b699f7c2428e36507c0f59029f2c7.ctex"]
+source_file="res://images/crosshair.png"
+dest_files=["res://.godot/imported/crosshair.png-158d3b9e1b8650994ded77b707486b76.ctex"]
 
 [params]
 
