@@ -3,6 +3,9 @@ extends Node2D
 @onready var HealthLabel = $HealthLabel
 @onready var Pirate = preload("res://components/Pirate.tscn")
 @onready var crosshair_texture = preload("res://images/crosshair.png")
+@onready var EnemiesRemainingLabel = $EnemiesRemainingLabel # Enemies remaining display
+@onready var redOverlay       = $redOverlay # Variable for the damage flash node.
+
 var crosshair_sprite: Sprite2D
 
 const VIEWPORT_WIDTH = 1152
@@ -19,8 +22,7 @@ var isReady = false
 const swordPaths = ["res://images/bandanapiratesword.png", "res://images/darkpiratesword.png", "res://images/lightpiratesword.png"]
 const gunPaths = ["res://images/darkpirategun.png", "res://images/lightpirategun.png", "res://images/lightpirateguntwo.png"]
 
-# Variable for the damage flash node.
-@onready var redOverlay       = $redOverlay  
+
 
 func _ready():
 	displayPlayerHealth()
@@ -64,16 +66,14 @@ func _process(delta):
 		currentPirate.DamageTaken.connect(onPirateDamageTaken)
 		add_child(currentPirate)
 		
-		piratesRemaining -= 1
+		displayEnemiesRemaining()  
 		isPirateVisible = true
 
 func onPirateDamageTaken(heartsDamaged):
 	playerHealth -= heartsDamaged
 	displayPlayerHealth()
 	showDamageEffect()  
-	print("Yi")
-	await get_tree().create_timer(1).timeout 
-	print("Haw")
+
 	
 	currentPirate.queue_free()
 	isPirateVisible = false
@@ -85,10 +85,12 @@ func onPirateDamageTaken(heartsDamaged):
 	displayPlayerHealth()
 		
 func onPirateClicked():
+	piratesRemaining -= 1
+	displayEnemiesRemaining()
 	await get_tree().create_timer(0.75).timeout 
 	currentPirate.queue_free()
 	isPirateVisible = false
-	piratesRemaining -= 1
+
 	
 	if ( piratesRemaining < 0):
 		print("Game win")
@@ -106,3 +108,5 @@ func showDamageEffect() -> void:
 	await get_tree().create_timer(0.2).timeout            # Wait 0.2 seconds.
 	redOverlay.color = Color(1, 0, 0, 0)                    # Fade back to transparent.
 	
+func displayEnemiesRemaining():
+	EnemiesRemainingLabel.text = "Jones' crew remaining: " + str(piratesRemaining)
