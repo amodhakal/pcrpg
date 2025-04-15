@@ -64,6 +64,7 @@ func _process(delta):
 		currentPirate.position = Vector2(chosenWidth, chosenHeight)
 		currentPirate.PirateClicked.connect(onPirateClicked)
 		currentPirate.DamageTaken.connect(onPirateDamageTaken)
+		
 		add_child(currentPirate)
 		
 		displayEnemiesRemaining()  
