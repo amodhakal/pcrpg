@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyj1mghiprnif"]
+
+[ext_resource type="Texture2D" uid="uid://b5v4m76q82pvo" path="res://images/treasure_room.png" id="1_6r2pc"]
+[ext_resource type="Texture2D" uid="uid://d3wgfhfxn8bvl" path="res://images/alex_jones_nobg.png" id="2_ln435"]
+[ext_resource type="Texture2D" uid="uid://bnnhqunbd3sdj" path="res://images/rack_sparrow_quickdraw.png" id="3_xe6se"]
+
+[node name="QuickDraw" type="Node2D"]
+
+[node name="TreasureRoom" type="Sprite2D" parent="."]
+position = Vector2(593, 316)
+scale = Vector2(2.39063, 1.33203)
+texture = ExtResource("1_6r2pc")
+
+[node name="AlexJones" type="Sprite2D" parent="."]
+position = Vector2(954, 334)
+texture = ExtResource("2_ln435")
+
+[node name="RackSparrow" type="Sprite2D" parent="."]
+position = Vector2(211, 320)
+texture = ExtResource("3_xe6se")
