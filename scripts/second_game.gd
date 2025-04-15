@@ -8,7 +8,7 @@ var crosshair_sprite: Sprite2D
 const VIEWPORT_WIDTH = 1152
 const VIEWPORT_HEIGHT = 590
 const X_BOUNDARY = 150
-const Y_BOUNDARY = 150
+const Y_BOUNDARY = 350
 
 var piratesRemaining = 58
 var playerHealth = 5
@@ -19,6 +19,8 @@ var isReady = false
 const swordPaths = ["res://images/bandanapiratesword.png", "res://images/darkpiratesword.png", "res://images/lightpiratesword.png"]
 const gunPaths = ["res://images/darkpirategun.png", "res://images/lightpirategun.png", "res://images/lightpirateguntwo.png"]
 
+# Variable for the damage flash node.
+@onready var redOverlay       = $redOverlay  
 
 func _ready():
 	displayPlayerHealth()
@@ -28,7 +30,13 @@ func _ready():
 
 	crosshair_sprite = Sprite2D.new()
 	crosshair_sprite.texture = crosshair_texture
+	crosshair_sprite.z_index = 10
 	add_child(crosshair_sprite)
+	
+	redOverlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	redOverlay.color = Color(1, 0, 0, 0)                            
+	redOverlay.z_index = 100                                 
+	add_child(redOverlay)                                   
 
 
 func _process(delta):
@@ -61,6 +69,7 @@ func _process(delta):
 
 func onPirateDamageTaken(heartsDamaged):
 	playerHealth -= heartsDamaged
+	showDamageEffect()  
 	print("Yi")
 	await get_tree().create_timer(1).timeout 
 	print("Haw")
@@ -89,3 +98,10 @@ func displayPlayerHealth():
 	HealthLabel.text = ""
 	for i in playerHealth:
 		HealthLabel.text += " ❤️"
+
+func showDamageEffect() -> void:
+
+	redOverlay.color = Color(1, 0, 0, 0.5)                  # Set overlay to semi-transparent red.
+	await get_tree().create_timer(0.2).timeout            # Wait 0.2 seconds.
+	redOverlay.color = Color(1, 0, 0, 0)                    # Fade back to transparent.
+	
