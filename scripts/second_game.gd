@@ -69,6 +69,7 @@ func _process(delta):
 
 func onPirateDamageTaken(heartsDamaged):
 	playerHealth -= heartsDamaged
+	displayPlayerHealth()
 	showDamageEffect()  
 	print("Yi")
 	await get_tree().create_timer(1).timeout 
