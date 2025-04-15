@@ -10,33 +10,41 @@ const VIEWPORT_HEIGHT = 590
 const X_BOUNDARY = 150
 const Y_BOUNDARY = 150
 
-var piratesRemaining = 38
+var piratesRemaining = 58
 var playerHealth = 5
 var isPirateVisible = false
 var currentPirate: Area2D
+var isReady = false
 
 const swordPaths = ["res://images/bandanapiratesword.png", "res://images/darkpiratesword.png", "res://images/lightpiratesword.png"]
 const gunPaths = ["res://images/darkpirategun.png", "res://images/lightpirategun.png", "res://images/lightpirateguntwo.png"]
 
+
 func _ready():
+	displayPlayerHealth()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	await get_tree().create_timer(2).timeout 
+	isReady = true
 
 	crosshair_sprite = Sprite2D.new()
 	crosshair_sprite.texture = crosshair_texture
 	add_child(crosshair_sprite)
-	displayPlayerHealth()
+
 
 func _process(delta):
+	if !isReady:
+		return
+		
 	crosshair_sprite.position = get_viewport().get_mouse_position()
 	
 	if (!isPirateVisible):
-		var chosenWidth = randi() % (VIEWPORT_WIDTH - X_BOUNDARY) + X_BOUNDARY
+		var chosenWidth = randi() % (VIEWPORT_WIDTH - X_BOUNDARY * 2) + X_BOUNDARY
 		var chosenHeight = randi() % (VIEWPORT_HEIGHT - Y_BOUNDARY) + Y_BOUNDARY
 		
 		var swordChosen = [true, false].pick_random()
 		var chosenTexture = load((swordPaths if swordChosen else gunPaths).pick_random())
 		var chosenHeartsDamaged = 1 if swordChosen else 2
-		var timeForDamage = 1 if swordChosen else 2
+		var timeForDamage = 0.6 if swordChosen else 0.9
 		
 		currentPirate = Pirate.instantiate()
 		currentPirate.texture = chosenTexture
@@ -53,10 +61,12 @@ func _process(delta):
 
 func onPirateDamageTaken(heartsDamaged):
 	playerHealth -= heartsDamaged
+	print("Yi")
+	await get_tree().create_timer(1).timeout 
+	print("Haw")
+	
 	currentPirate.queue_free()
 	isPirateVisible = false
-	
-	print("Damage taken")
 	
 	if (playerHealth < 0):
 		print("Game lost")
@@ -69,8 +79,6 @@ func onPirateClicked():
 	currentPirate.queue_free()
 	isPirateVisible = false
 	piratesRemaining -= 1
-	
-	print("Clicked on time")
 	
 	if ( piratesRemaining < 0):
 		print("Game win")

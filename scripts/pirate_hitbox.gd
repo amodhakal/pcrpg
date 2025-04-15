@@ -3,12 +3,12 @@ extends Area2D
 signal PirateClicked
 signal DamageTaken
 
-var bloodTexture = preload("res://images/bloodpirate.png")
 var isClicked = false
 
 @onready var pirate = $Darkpiratesword
-@onready var collision = $CollisionPolygon2D
+@onready var collision = $CollisionShape2D
 @onready var timer = $Timer
+@onready var bloodTexture = preload("res://images/bloodpirate.png")
 
 @export var texture: Texture2D
 @export var heartsDamaged: int
@@ -16,6 +16,7 @@ var isClicked = false
 
 func _ready() -> void:
 	pirate.texture = texture
+	collision.shape.size = texture.get_size()
 	input_pickable = true
 
 	timer.wait_time = timeForDamage
@@ -28,8 +29,8 @@ func _on_timer_timeout() -> void:
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			pirate.texture = bloodTexture
 			collision.disabled = true
 			isClicked = true
 			timer.stop()
+			pirate.texture = bloodTexture
 			emit_signal("PirateClicked")
