@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://df8wscnjagdjx"]
+
+[ext_resource type="Script" path="res://scripts/pirate_hitbox.gd" id="1_kenti"]
+[ext_resource type="Texture2D" uid="uid://18ouru203b03" path="res://images/darkpiratesword.png" id="2_i0hff"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fvjw"]
+
+[node name="PirateHitbox" type="Area2D"]
+scale = Vector2(0.486, 0.408)
+script = ExtResource("1_kenti")
+
+[node name="Darkpiratesword" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.978)
+texture = ExtResource("2_i0hff")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6fvjw")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

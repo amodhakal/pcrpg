@@ -1,13 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://d38e4l1plf48c"]
+[gd_scene load_steps=3 format=3 uid="uid://d38e4l1plf48c"]
 
-[ext_resource type="Texture2D" uid="uid://bx1q7kugcbm2v" path="res://images/WaterTile.png" id="1_sljym"]
+[ext_resource type="Script" path="res://scripts/to_second.gd" id="1_esks7"]
+[ext_resource type="Texture2D" uid="uid://dul1i3rcocn8b" path="res://images/beachfight.png" id="2_crfe7"]
 
-[node name="ToFirst" type="Node2D"]
+[node name="ToSecond" type="Node2D"]
+script = ExtResource("1_esks7")
 
-[node name="WaterTile" type="Sprite2D" parent="."]
-position = Vector2(572.802, 318.948)
-scale = Vector2(0.576365, 0.328176)
-texture = ExtResource("1_sljym")
+[node name="Beachfight" type="Sprite2D" parent="."]
+position = Vector2(576.75, 323.25)
+scale = Vector2(0.963314, 0.997738)
+texture = ExtResource("2_crfe7")
 
 [node name="Title" type="Label" parent="."]
 offset_top = 157.0
@@ -25,14 +27,16 @@ offset_right = 1125.0
 offset_bottom = 438.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "You successfully managed to swim to the treasure island."
+text = "You successfully managed to swim to the treasure island. However, the enemy pirates have followed you to the island. Kill them by clicking of them. If you don't click on time, you will lose your health. Make sure to not die before all of the enemy pirates are killed."
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]
-offset_left = 395.0
-offset_top = 443.0
-offset_right = 788.0
-offset_bottom = 552.0
+offset_left = 340.0
+offset_top = 446.0
+offset_right = 815.0
+offset_bottom = 555.0
 theme_override_font_sizes/font_size = 40
-text = "
+text = "Kill these bastards
 "
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

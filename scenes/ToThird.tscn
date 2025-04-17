@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmpuq137to62v"]
+
+[ext_resource type="Script" path="res://scripts/to_third.gd" id="1_xq7is"]
+[ext_resource type="Texture2D" uid="uid://b5v4m76q82pvo" path="res://images/treasure_room.png" id="2_jof87"]
+
+[node name="ToThird" type="Node2D"]
+script = ExtResource("1_xq7is")
+
+[node name="TreasureRoom" type="Sprite2D" parent="."]
+position = Vector2(593, 316)
+scale = Vector2(2.39063, 1.33203)
+texture = ExtResource("2_jof87")
+
+[node name="Title" type="Label" parent="."]
+offset_top = 157.0
+offset_right = 1150.0
+offset_bottom = 294.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Congrats!"
+horizontal_alignment = 1
+
+[node name="Context" type="Label" parent="."]
+offset_left = 27.0
+offset_top = 301.0
+offset_right = 1125.0
+offset_bottom = 438.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "You successfully killed your enemies. You go to the treasure dungeon, and found the bastard, Alex Jones. He tried to sink you first and you will kill him to end this. You will be doing a standoff. Make sure to click to shoot Alex as soon as possible after WAIT disappears to win. If too early, you will lose a heart. "
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+offset_left = 340.0
+offset_top = 478.0
+offset_right = 815.0
+offset_bottom = 587.0
+theme_override_font_sizes/font_size = 40
+text = "Kill these bastards
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

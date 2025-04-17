@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://c437wk82a0vjv"]
+
+[ext_resource type="Texture2D" uid="uid://dul1i3rcocn8b" path="res://images/beachfight.png" id="1_k6ddj"]
+[ext_resource type="Script" path="res://scripts/second_game.gd" id="1_sbbdl"]
+
+[node name="SecondLocation" type="Node2D"]
+script = ExtResource("1_sbbdl")
+
+[node name="Beachfight" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.949712, 0.977376)
+texture = ExtResource("1_k6ddj")
+
+[node name="HealthLabel" type="Label" parent="."]
+offset_left = 401.0
+offset_top = 22.0
+offset_right = 722.0
+offset_bottom = 50.0
+scale = Vector2(2.27999, 1.72)
+theme_override_font_sizes/font_size = 20
+text = "❤️"
+horizontal_alignment = 2
+
+[node name="redOverlay" type="ColorRect" parent="."]
+offset_left = -12.0
+offset_top = -18.0
+offset_right = 1166.0
+offset_bottom = 649.0
+color = Color(1, 0.196078, 0.145098, 0)
+
+[node name="EnemiesRemainingLabel" type="Label" parent="."]
+offset_left = 116.0
+offset_top = 8.0
+offset_right = 477.0
+offset_bottom = 58.0
+text = "Jones' crew remaining: "

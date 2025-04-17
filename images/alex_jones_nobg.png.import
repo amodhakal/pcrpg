@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dljp88fjblo37"
-path="res://.godot/imported/lightpirategun.png-c4184743da9430625df3f442f59d029d.ctex"
+uid="uid://d3wgfhfxn8bvl"
+path="res://.godot/imported/alex_jones_nobg.png-4758516728d2d7f3452ea3a8ea3a28a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/lightpirategun.png"
-dest_files=["res://.godot/imported/lightpirategun.png-c4184743da9430625df3f442f59d029d.ctex"]
+source_file="res://images/alex_jones_nobg.png"
+dest_files=["res://.godot/imported/alex_jones_nobg.png-4758516728d2d7f3452ea3a8ea3a28a3.ctex"]
 
 [params]
 

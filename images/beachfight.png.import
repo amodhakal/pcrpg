@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dljp88fjblo37"
-path="res://.godot/imported/lightpirategun.png-c4184743da9430625df3f442f59d029d.ctex"
+uid="uid://dul1i3rcocn8b"
+path="res://.godot/imported/beachfight.png-7fe096ea351571d988e9b6747ca6edd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/lightpirategun.png"
-dest_files=["res://.godot/imported/lightpirategun.png-c4184743da9430625df3f442f59d029d.ctex"]
+source_file="res://images/beachfight.png"
+dest_files=["res://.godot/imported/beachfight.png-7fe096ea351571d988e9b6747ca6edd5.ctex"]
 
 [params]
 

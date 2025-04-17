@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dljp88fjblo37"
-path="res://.godot/imported/lightpirategun.png-c4184743da9430625df3f442f59d029d.ctex"
+uid="uid://xsr0tnpkgubq"
+path="res://.godot/imported/crosshair.png-158d3b9e1b8650994ded77b707486b76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/lightpirategun.png"
-dest_files=["res://.godot/imported/lightpirategun.png-c4184743da9430625df3f442f59d029d.ctex"]
+source_file="res://images/crosshair.png"
+dest_files=["res://.godot/imported/crosshair.png-158d3b9e1b8650994ded77b707486b76.ctex"]
 
 [params]
 

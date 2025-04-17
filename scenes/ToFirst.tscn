@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqw8huelik7u7"]
+[gd_scene load_steps=3 format=3 uid="uid://dix4glr6rid62"]
 
 [ext_resource type="Texture2D" uid="uid://bx1q7kugcbm2v" path="res://images/WaterTile.png" id="1_s4yfj"]
 [ext_resource type="Script" path="res://scripts/ToFirst.gd" id="2_hld8c"]

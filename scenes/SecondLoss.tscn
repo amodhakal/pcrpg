@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxo0u87h2mljx"]
+
+[ext_resource type="Script" path="res://scripts/second_loss.gd" id="1_lenfy"]
+[ext_resource type="Texture2D" uid="uid://dul1i3rcocn8b" path="res://images/beachfight.png" id="1_wydtv"]
+
+[node name="SecondLoss" type="Node2D"]
+script = ExtResource("1_lenfy")
+
+[node name="Beachfight" type="Sprite2D" parent="."]
+position = Vector2(572.75, 321.25)
+scale = Vector2(0.964963, 1.00075)
+texture = ExtResource("1_wydtv")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 29.0
+offset_top = 328.0
+offset_right = 1180.0
+offset_bottom = 435.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "You were killed by the pirates"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 403.0
+offset_top = 458.0
+offset_right = 745.0
+offset_bottom = 560.0
+theme_override_font_sizes/font_size = 30
+text = "Try again"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
