@@ -2,9 +2,13 @@ extends Node2D
 
 @onready var Scrolled = $Scrolled
 
-func _ready() -> void:
-	pass
+var ToFirstPath = "res://scenes/ToFirst.tscn"
+
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _process(delta: float) -> void:
-	Scrolled.position.y -= delta * 15
-	pass
+	Scrolled.position.y -= delta * 20
+	
+	if ( Scrolled.position.y < -900):
+		get_tree().change_scene_to_file(ToFirstPath)
