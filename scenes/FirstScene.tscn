@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnbn3rvfdmt6x"]
+[gd_scene load_steps=3 format=3 uid="uid://c5lo88aqbad3w"]
 
 [ext_resource type="Script" path="res://scenes/opening_scene.gd" id="1_daktp"]
 
@@ -14,10 +14,10 @@ offset_bottom = 647.0
 color = Color(0.00138151, 0, 0.101618, 1)
 
 [node name="Scrolled" type="Label" parent="."]
-offset_left = 22.0
-offset_top = 20.0
-offset_right = 1120.0
-offset_bottom = 624.0
+offset_left = 20.0
+offset_top = 106.0
+offset_right = 1118.0
+offset_bottom = 1495.0
 text = "Previously, you, Rack Sparrow, commanded the mighty Wolf’s Wrath—pride of your pirate fleet. But when the notorious Skull & Jones, under Captain Alex Jones, descended upon your ship, you saw your world — and your former capital ship shattered. Rallying what remained of your crew, you dared the impossible: you boarded the enemy flagship and seized control, only to discover Alex Jones himself was nowhere to be found.
 
 Aboard the Skull & Jones, you scoured every hold and corridor in search of plunder—and the foul captain’s trail. In the chaos of that daring raid, you uncovered chests of gold, cursed relics, and whispered legends of a far greater prize. Your treasure hunt forged your infamy, but it also drew the wrath of the enemy fleet.
