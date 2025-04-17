@@ -78,7 +78,7 @@ func schedule_shooting_preparation() -> void:
 	schedule_enemy_shooting()
 
 func schedule_enemy_shooting() -> void:
-	var timer = get_tree().create_timer(randf_range(0.0, 0.1) + 0.29)
+	var timer = get_tree().create_timer(randf_range(0.0, 0.1) + 0.20)
 	await timer.timeout
 	handle_enemy_shooting()
 
