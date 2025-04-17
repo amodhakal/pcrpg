@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5lo88aqbad3w"]
+
+[ext_resource type="Script" path="res://scenes/opening_scene.gd" id="1_daktp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6bo4l"]
+font_size = 40
+
+[node name="OpeningScene" type="Node2D"]
+script = ExtResource("1_daktp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1149.0
+offset_bottom = 647.0
+color = Color(0.00138151, 0, 0.101618, 1)
+
+[node name="Scrolled" type="Label" parent="."]
+offset_left = 22.0
+offset_top = 20.0
+offset_right = 1120.0
+offset_bottom = 624.0
+label_settings = SubResource("LabelSettings_6bo4l")
+horizontal_alignment = 1
+autowrap_mode = 2
