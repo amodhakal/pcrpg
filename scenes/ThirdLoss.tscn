@@ -12,14 +12,18 @@ scale = Vector2(2.39063, 1.33203)
 texture = ExtResource("1_gu5v7")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 27.0
-offset_top = 128.0
-offset_right = 1178.0
-offset_bottom = 235.0
+offset_left = -393.0
+offset_top = 80.0
+offset_right = 1535.0
+offset_bottom = 249.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
-text = "You were killed by Alex"
+text = "Alex’s bullet finds you unguarded.
+
+
+
+Your journey fades into silence..."
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
