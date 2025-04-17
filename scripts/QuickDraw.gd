@@ -5,6 +5,7 @@ extends Node
 @onready var BloodSprite		= $BloodSprite
 @onready var AlexHealthLabel    = $AlexHealth
 @onready var WaitLabel          = $WaitLabel
+@onready var FireLabel			= $FireLabel
 @onready var BloodTexture       = preload("res://images/bloodpirate.png")
 @onready var redOverlay         = $redOverlay
 @onready var firstPerson        = $FirstPerson
@@ -34,6 +35,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	WaitLabel.visible = (state != "ShootState")
+	FireLabel.visible = (state == "ShootState" && !shotFired)
 	if Input.is_action_just_pressed("Shoot"):
 		handle_player_input()
 	BloodSprite.visible = (alexHealth <= 0)
