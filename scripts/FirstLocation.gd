@@ -32,6 +32,7 @@ func emitGameOver():
 	if is_instance_valid(COLLISIONS):
 		COLLISIONS.set_deferred("monitoring", false)
 	
+	AudioManager.playEffect("loss")
 	if is_instance_valid(LOST_TEXT):
 		LOST_TEXT.visible = true
 	if is_instance_valid(RESTART_BTN):

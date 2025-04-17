@@ -44,6 +44,7 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("ProtagonistUp"):
 		velocity.y = JUMP
+		AudioManager.playEffect("jump")
 
 	velocity.x = delta * 10_000
 	move_and_slide()

@@ -15,11 +15,12 @@ extends Node
 
 var state            = "InitialState"
 var shotFired        = false
-var rackHealth       = 2
+var rackHealth       = 3
 var alexHealth       = 5
 var processing_shot  = false
 
 func _ready() -> void:
+	AudioManager.playMusic("third")
 	JonesFlash.modulate = Color(1, 0, 0, 0)
 	BloodSprite.visible = false
 	firstPerson.visible = false
@@ -44,18 +45,16 @@ func handle_player_input() -> void:
 
 	if state != "ShootState":
 		processing_shot = true
-		print("Shot too early!")
 		showDamageEffect()
 		rackHealth -= 1
 		update_health_display()
 		handleGameOver()
 		return
 	elif shotFired:
-		print("Too late, shot already fired")
 		return
 
 	processing_shot = true
-	print("Player shot first!")
+	AudioManager.playEffect("shot")
 	shotFired = true
 	flash_jones()
 	alexHealth -= 1
@@ -84,7 +83,7 @@ func handle_enemy_shooting() -> void:
 		return
 	processing_shot = true
 	state = "InitialState"
-	print("Enemy shot first!")
+	AudioManager.playEffect("shot")
 	shotFired = true
 	showDamageEffect()
 	rackHealth -= 1
@@ -93,9 +92,6 @@ func handle_enemy_shooting() -> void:
 	handleGameOver()
 
 func handleGameOver() -> void:
-	print(rackHealth)
-	print(alexHealth)
-	
 	if rackHealth <= 0:
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file(LossPath)

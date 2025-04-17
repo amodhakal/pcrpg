@@ -13,6 +13,7 @@ var isClicked = false
 @export var texture: Texture2D
 @export var heartsDamaged: int
 @export var timeForDamage: float
+@export var pirateType: String
 
 func _ready() -> void:
 	pirate.texture = texture
@@ -23,6 +24,7 @@ func _ready() -> void:
 	timer.start()
 	
 func _on_timer_timeout() -> void:
+	AudioManager.playEffect(pirateType)
 	if not isClicked:
 		emit_signal("DamageTaken", heartsDamaged)
 
