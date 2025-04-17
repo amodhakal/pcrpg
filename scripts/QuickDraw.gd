@@ -75,7 +75,7 @@ func schedule_shooting_preparation() -> void:
 	schedule_enemy_shooting()
 
 func schedule_enemy_shooting() -> void:
-	var timer = get_tree().create_timer(randf_range(0.0, 0.3) + 0.25)
+	var timer = get_tree().create_timer(randf_range(0.0, 0.3) + 0.3)
 	await timer.timeout
 	handle_enemy_shooting()
 
@@ -93,13 +93,14 @@ func handle_enemy_shooting() -> void:
 	handleGameOver()
 
 func handleGameOver() -> void:
+	print(rackHealth)
+	print(alexHealth)
+	
 	if rackHealth <= 0:
-		print("Game lost")
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file(LossPath)
 		return
 	if alexHealth <= 0:
-		print("Game won")
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file(WinPath)
 		return

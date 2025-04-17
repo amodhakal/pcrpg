@@ -6,6 +6,9 @@ extends Node2D
 @onready var EnemiesRemainingLabel = $EnemiesRemainingLabel # Enemies remaining display
 @onready var redOverlay       = $redOverlay # Variable for the damage flash node.
 
+@onready var TO_THIRD_PATH = "res://scenes/ToThird.tscn"
+@onready var LOSS_PATH = "res://scenes/SecondLoss.tscn"
+
 var crosshair_sprite: Sprite2D
 
 const VIEWPORT_WIDTH = 1152
@@ -13,7 +16,7 @@ const VIEWPORT_HEIGHT = 590
 const X_BOUNDARY = 150
 const Y_BOUNDARY = 350
 
-var piratesRemaining = 58
+var piratesRemaining = 60
 var playerHealth = 5
 var isPirateVisible = false
 var currentPirate: Area2D
@@ -26,6 +29,8 @@ const gunPaths = ["res://images/darkpirategun.png", "res://images/lightpirategun
 
 func _ready():
 	displayPlayerHealth()
+	displayEnemiesRemaining()
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	await get_tree().create_timer(2).timeout 
 	isReady = true
@@ -79,9 +84,9 @@ func onPirateDamageTaken(heartsDamaged):
 	currentPirate.queue_free()
 	isPirateVisible = false
 	
-	if (playerHealth < 0):
-		print("Game lost")
-		# TODO: Handle player loss
+	if (playerHealth <= 0):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().change_scene_to_file(LOSS_PATH)
 	
 	displayPlayerHealth()
 		
@@ -93,9 +98,9 @@ func onPirateClicked():
 	isPirateVisible = false
 
 	
-	if ( piratesRemaining < 0):
-		print("Game win")
-		# TODO: Handle game win
+	if ( piratesRemaining <= 0):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().change_scene_to_file(TO_THIRD_PATH)
 
 
 func displayPlayerHealth():
