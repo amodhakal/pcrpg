@@ -44,10 +44,21 @@ offset_left = 476.0
 offset_top = 59.0
 offset_right = 724.0
 offset_bottom = 196.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Wait..."
+horizontal_alignment = 1
+
+[node name="FireLabel" type="Label" parent="."]
+offset_left = 476.0
+offset_top = 59.0
+offset_right = 724.0
+offset_bottom = 196.0
 theme_override_colors/font_color = Color(0.995312, 0, 0.182021, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
-text = "WAIT"
+text = "FIRE!"
 horizontal_alignment = 1
 
 [node name="FirstPerson" type="Sprite2D" parent="."]

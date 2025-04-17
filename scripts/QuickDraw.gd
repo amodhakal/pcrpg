@@ -5,6 +5,7 @@ extends Node
 @onready var BloodSprite		= $BloodSprite
 @onready var AlexHealthLabel    = $AlexHealth
 @onready var WaitLabel          = $WaitLabel
+@onready var FireLabel			= $FireLabel
 @onready var BloodTexture       = preload("res://images/bloodpirate.png")
 @onready var redOverlay         = $redOverlay
 @onready var firstPerson        = $FirstPerson
@@ -20,6 +21,8 @@ var alexHealth       = 5
 var processing_shot  = false
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	AudioManager.playMusic("third")
 	JonesFlash.modulate = Color(1, 0, 0, 0)
 	BloodSprite.visible = false
 	firstPerson.visible = false
@@ -33,6 +36,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	WaitLabel.visible = (state != "ShootState")
+	FireLabel.visible = (state == "ShootState" && !shotFired)
 	if Input.is_action_just_pressed("Shoot"):
 		handle_player_input()
 	BloodSprite.visible = (alexHealth <= 0)
@@ -44,18 +48,16 @@ func handle_player_input() -> void:
 
 	if state != "ShootState":
 		processing_shot = true
-		print("Shot too early!")
 		showDamageEffect()
 		rackHealth -= 1
 		update_health_display()
 		handleGameOver()
 		return
 	elif shotFired:
-		print("Too late, shot already fired")
 		return
 
 	processing_shot = true
-	print("Player shot first!")
+	AudioManager.playEffect("shot")
 	shotFired = true
 	flash_jones()
 	alexHealth -= 1
@@ -75,7 +77,7 @@ func schedule_shooting_preparation() -> void:
 	schedule_enemy_shooting()
 
 func schedule_enemy_shooting() -> void:
-	var timer = get_tree().create_timer(randf_range(0.0, 0.3) + 0.3)
+	var timer = get_tree().create_timer(randf_range(0.0, 0.1) + 0.29)
 	await timer.timeout
 	handle_enemy_shooting()
 
@@ -84,7 +86,7 @@ func handle_enemy_shooting() -> void:
 		return
 	processing_shot = true
 	state = "InitialState"
-	print("Enemy shot first!")
+	AudioManager.playEffect("shot")
 	shotFired = true
 	showDamageEffect()
 	rackHealth -= 1
@@ -93,9 +95,6 @@ func handle_enemy_shooting() -> void:
 	handleGameOver()
 
 func handleGameOver() -> void:
-	print(rackHealth)
-	print(alexHealth)
-	
 	if rackHealth <= 0:
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file(LossPath)

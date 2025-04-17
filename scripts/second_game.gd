@@ -28,6 +28,7 @@ const gunPaths = ["res://images/darkpirategun.png", "res://images/lightpirategun
 
 
 func _ready():
+	AudioManager.playMusic("second")
 	displayPlayerHealth()
 	displayEnemiesRemaining()
 	
@@ -65,6 +66,7 @@ func _process(delta):
 		currentPirate.texture = chosenTexture
 		currentPirate.heartsDamaged = chosenHeartsDamaged
 		currentPirate.timeForDamage = timeForDamage
+		currentPirate.pirateType = "sword" if swordChosen else "shot"
 		
 		currentPirate.position = Vector2(chosenWidth, chosenHeight)
 		currentPirate.PirateClicked.connect(onPirateClicked)
@@ -79,10 +81,6 @@ func onPirateDamageTaken(heartsDamaged):
 	playerHealth -= heartsDamaged
 	displayPlayerHealth()
 	showDamageEffect()  
-
-	
-	currentPirate.queue_free()
-	isPirateVisible = false
 	
 	if (playerHealth <= 0):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -91,6 +89,7 @@ func onPirateDamageTaken(heartsDamaged):
 	displayPlayerHealth()
 		
 func onPirateClicked():
+	AudioManager.playEffect("shot")
 	piratesRemaining -= 1
 	displayEnemiesRemaining()
 	await get_tree().create_timer(0.75).timeout 

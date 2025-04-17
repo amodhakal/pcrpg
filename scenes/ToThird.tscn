@@ -17,7 +17,7 @@ offset_right = 1150.0
 offset_bottom = 294.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
-text = "Congrats!"
+text = "Two Captains"
 horizontal_alignment = 1
 
 [node name="Context" type="Label" parent="."]
@@ -27,7 +27,7 @@ offset_right = 1125.0
 offset_bottom = 438.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "You successfully killed your enemies. You go to the treasure dungeon, and found the bastard, Alex Jones. He tried to sink you first and you will kill him to end this. You will be doing a standoff. Make sure to click to shoot Alex as soon as possible after WAIT disappears to win. If too early, you will lose a heart. "
+text = "After slaughtering his remaining crew and making it to the island's treasure room, you, Captain Rack Sparrow, and your archnemesis, Captain Alex Jones, have found yourselves in a standoff. Execute this scumbag and claim the treasure that is rightfully yours. "
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]
@@ -36,7 +36,7 @@ offset_top = 478.0
 offset_right = 815.0
 offset_bottom = 587.0
 theme_override_font_sizes/font_size = 40
-text = "Kill these bastards
+text = "Kill this bastard!
 "
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

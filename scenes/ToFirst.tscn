@@ -28,7 +28,7 @@ offset_right = 1125.0
 offset_bottom = 438.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "Alex Jones has wrecked your ship with the cannon. Swim to the treasure island you were planning to go to. Click either the up arrow, the left button or tap, to swim closer to the surface. There will be various obstacles in the way. Survive and good luck!"
+text = "After a valiant defense effort, Captain Alex  Jones has wrecked your ship, leaving you defenseless in the wake of his incoming fleet. Swim to safety and stand your ground against his crew."
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]

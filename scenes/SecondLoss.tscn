@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxo0u87h2mljx"]
+[gd_scene load_steps=3 format=3 uid="uid://vo652d6qswji"]
 
 [ext_resource type="Script" path="res://scripts/second_loss.gd" id="1_lenfy"]
 [ext_resource type="Texture2D" uid="uid://dul1i3rcocn8b" path="res://images/beachfight.png" id="1_wydtv"]
@@ -12,14 +12,14 @@ scale = Vector2(0.964963, 1.00075)
 texture = ExtResource("1_wydtv")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 29.0
-offset_top = 328.0
-offset_right = 1180.0
-offset_bottom = 435.0
+offset_left = 3.0
+offset_top = 184.0
+offset_right = 1154.0
+offset_bottom = 291.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
-text = "You were killed by the pirates"
+text = "Jones' crew ended you."
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
