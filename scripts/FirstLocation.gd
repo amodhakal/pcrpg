@@ -17,7 +17,6 @@ const LOG_COUNT = 50
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	AudioManager.playMusic("first")
 	var obstacles = generate_obstacles()
 	for obstacle in obstacles:
 		self.add_child(obstacle)
@@ -36,7 +35,8 @@ func emitGameOver():
 	
 		
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	AudioManager.playEffect("loss")
+	if !LOST_TEXT.visible:
+		AudioManager.playEffect("loss")
 	if is_instance_valid(LOST_TEXT):
 		LOST_TEXT.visible = true
 	if is_instance_valid(RESTART_BTN):
