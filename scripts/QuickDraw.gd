@@ -16,7 +16,7 @@ extends Node
 
 var state            = "InitialState"
 var shotFired        = false
-var rackHealth       = 3
+var rackHealth       = 2
 var alexHealth       = 5
 var processing_shot  = false
 
@@ -77,7 +77,7 @@ func schedule_shooting_preparation() -> void:
 	schedule_enemy_shooting()
 
 func schedule_enemy_shooting() -> void:
-	var timer = get_tree().create_timer(randf_range(0.0, 0.3) + 0.3)
+	var timer = get_tree().create_timer(randf_range(0.0, 0.1) + 0.29)
 	await timer.timeout
 	handle_enemy_shooting()
 
