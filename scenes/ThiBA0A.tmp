@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyj1mghiprnif"]
+[gd_scene load_steps=5 format=3 uid="uid://dyj1mghiprnif"]
 
 [ext_resource type="Texture2D" uid="uid://b5v4m76q82pvo" path="res://images/treasure_room.png" id="1_6r2pc"]
 [ext_resource type="Script" path="res://scripts/QuickDraw.gd" id="1_7gkp1"]
 [ext_resource type="Texture2D" uid="uid://dghfdaj8e8mir" path="res://images/AlexJones.png" id="3_1cyjo"]
 [ext_resource type="Texture2D" uid="uid://dtbd3gvblx5lw" path="res://images/rackwithgun.png" id="5_2gxed"]
-[ext_resource type="Texture2D" uid="uid://c6y8boo60pdpw" path="res://images/bloodpirate.png" id="5_u7ng4"]
 
 [node name="QuickDraw" type="Node2D"]
 script = ExtResource("1_7gkp1")
@@ -21,6 +20,11 @@ color = Color(1, 0.196078, 0.145098, 0)
 position = Vector2(593, 316)
 scale = Vector2(2.39063, 1.33203)
 texture = ExtResource("1_6r2pc")
+
+[node name="AlexSprite" type="Sprite2D" parent="."]
+position = Vector2(605, 363)
+scale = Vector2(-0.816376, 0.776568)
+texture = ExtResource("3_1cyjo")
 
 [node name="RackHealth" type="Label" parent="."]
 offset_left = 26.0
@@ -54,24 +58,3 @@ horizontal_alignment = 1
 position = Vector2(795, 453)
 scale = Vector2(0.705797, 0.558702)
 texture = ExtResource("5_2gxed")
-
-[node name="BloodSprite" type="Sprite2D" parent="."]
-z_index = 10
-position = Vector2(630, 240)
-scale = Vector2(0.3555, 0.609)
-texture = ExtResource("5_u7ng4")
-
-[node name="AlexSprite" type="Sprite2D" parent="."]
-
-[node name="AlexTexture" type="Sprite2D" parent="AlexSprite"]
-position = Vector2(605, 363)
-rotation = 3.14159
-scale = Vector2(0.816376, -0.776568)
-texture = ExtResource("3_1cyjo")
-
-[node name="AlexDamaged" type="Sprite2D" parent="AlexSprite"]
-z_index = 5
-position = Vector2(605, 363)
-rotation = 3.14159
-scale = Vector2(0.816376, -0.776568)
-texture = ExtResource("3_1cyjo")
