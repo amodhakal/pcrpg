@@ -16,6 +16,7 @@ const LOG_COUNT = 50
 @onready var RESTART_BTN = $Camera2D/Restart
 
 func _ready() -> void:
+	AudioManager.playMusic("first")
 	var obstacles = generate_obstacles()
 	for obstacle in obstacles:
 		self.add_child(obstacle)

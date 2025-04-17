@@ -17,12 +17,14 @@ extends Node
 var currentTrack = ""
 
 func _ready():
-	effectPlayer.volume_db = -15.0
+	effectPlayer.volume_db = -5.0
 	add_child(musicPlayer)
 	add_child(effectPlayer)
 	musicPlayer.connect("finished", Callable(self, "_on_music_finished"))
 
 func playMusic(music):
+	print(music)
+	
 	if music == "":
 		return
 	if music == "first":
