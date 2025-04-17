@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5lo88aqbad3w"]
+[gd_scene load_steps=3 format=3 uid="uid://bnbn3rvfdmt6x"]
 
 [ext_resource type="Script" path="res://scenes/opening_scene.gd" id="1_daktp"]
 
@@ -18,6 +18,11 @@ offset_left = 22.0
 offset_top = 20.0
 offset_right = 1120.0
 offset_bottom = 624.0
+text = "Previously, you, Rack Sparrow, commanded the mighty Wolf’s Wrath—pride of your pirate fleet. But when the notorious Skull & Jones, under Captain Alex Jones, descended upon your ship, you saw your world — and your former capital ship shattered. Rallying what remained of your crew, you dared the impossible: you boarded the enemy flagship and seized control, only to discover Alex Jones himself was nowhere to be found.
+
+Aboard the Skull & Jones, you scoured every hold and corridor in search of plunder—and the foul captain’s trail. In the chaos of that daring raid, you uncovered chests of gold, cursed relics, and whispered legends of a far greater prize. Your treasure hunt forged your infamy, but it also drew the wrath of the enemy fleet.
+
+They pursued you across churning seas, unleashing a relentless barrage that reduced the commandeered Skull & Jones to splinters. Clinging to life, you drifted toward a remote island cloaked in myth—a place said to harbor a hoard more priceless than all the world’s doubloons. Now, with the sea closing in around you, a final challenge beckons: you must swim for your destiny… or drown in the depths of legend."
 label_settings = SubResource("LabelSettings_6bo4l")
 horizontal_alignment = 1
 autowrap_mode = 2
