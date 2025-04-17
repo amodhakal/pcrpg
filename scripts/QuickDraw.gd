@@ -21,6 +21,7 @@ var alexHealth       = 5
 var processing_shot  = false
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	AudioManager.playMusic("third")
 	JonesFlash.modulate = Color(1, 0, 0, 0)
 	BloodSprite.visible = false
