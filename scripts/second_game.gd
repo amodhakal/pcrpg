@@ -81,10 +81,6 @@ func onPirateDamageTaken(heartsDamaged):
 	playerHealth -= heartsDamaged
 	displayPlayerHealth()
 	showDamageEffect()  
-
-	
-	currentPirate.queue_free()
-	isPirateVisible = false
 	
 	if (playerHealth <= 0):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
