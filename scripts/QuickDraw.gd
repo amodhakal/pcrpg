@@ -74,6 +74,7 @@ func start_new_round() -> void:
 func schedule_shooting_preparation() -> void:
 	await get_tree().create_timer(randf_range(3.0, 6.0)).timeout
 	state = "ShootState"
+	AudioManager.playEffect("cock")
 	schedule_enemy_shooting()
 
 func schedule_enemy_shooting() -> void:

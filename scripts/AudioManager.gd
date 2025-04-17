@@ -10,6 +10,7 @@ extends Node
 @onready var shot = preload("res://audio/shot.mp3")
 @onready var jump = preload("res://audio/jump.mp3")
 @onready var loss = preload("res://audio/loss.mp3")
+@onready var cock = preload("res://audio/gun_cocking.mp3")
 
 @onready var musicPlayer = AudioStreamPlayer.new()
 @onready var effectPlayer = AudioStreamPlayer.new()
@@ -58,6 +59,8 @@ func playEffect(effect):
 		effectPlayer.stream = jump
 	if effect == "loss":
 		effectPlayer.stream = loss
+	if effect == "cock":
+		effectPlayer.stream = cock
 	effectPlayer.play()
 	
 func _on_music_finished():
