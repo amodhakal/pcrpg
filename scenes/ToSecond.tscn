@@ -17,7 +17,7 @@ offset_right = 1150.0
 offset_bottom = 294.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
-text = "Congrats!"
+text = "Stand your ground!"
 horizontal_alignment = 1
 
 [node name="Context" type="Label" parent="."]
@@ -27,7 +27,7 @@ offset_right = 1125.0
 offset_bottom = 438.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
-text = "You successfully managed to swim to the treasure island. However, the enemy pirates have followed you to the island. Kill them by clicking of them. If you don't click on time, you will lose your health. Make sure to not die before all of the enemy pirates are killed."
+text = "You've made it to the mysterious island, but Jones' remaining fleet has caught up. Stand your ground and blast his crew before they put an end to everything you've accomplished. "
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]

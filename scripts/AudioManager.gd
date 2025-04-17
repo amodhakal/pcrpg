@@ -2,7 +2,7 @@ extends Node
 
 @onready var first = preload("res://audio/first.mp3")
 @onready var second = preload("res://audio/second.mp3")
-@onready var third = preload("res://audio/second.mp3")
+@onready var third = preload("res://audio/third.mp3")
 @onready var win = preload("res://audio/win.mp3")
 @onready var victory = preload("res://audio/victory.mp3")
 
