@@ -12,21 +12,12 @@ scale = Vector2(2.3125, 2.3125)
 texture = ExtResource("1_s33wg")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 1.0
-offset_top = 257.0
-offset_right = 1152.0
-offset_bottom = 364.0
+offset_left = 7.0
+offset_top = 205.0
+offset_right = 1158.0
+offset_bottom = 312.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 70
-text = "Congrats, you killed Alex Jones"
+text = "Congrats, you killed Alex Jones..."
 horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="."]
-offset_left = 38.0
-offset_top = 374.0
-offset_right = 1127.0
-offset_bottom = 612.0
-theme_override_font_sizes/font_size = 30
-text = "With Alex Jones dead, you have sucessfully gotten your revenge. With your new treasure, you lived your life in peace in a remote island."
-autowrap_mode = 2
