@@ -5,6 +5,7 @@ extends Node
 @onready var third = preload("res://audio/third.mp3")
 @onready var win = preload("res://audio/win.mp3")
 @onready var victory = preload("res://audio/victory.mp3")
+@onready var tension = preload("res://audio/tension.mp3")
 
 @onready var sword = preload("res://audio/sword.mp3")
 @onready var shot = preload("res://audio/shot.mp3")
@@ -23,9 +24,7 @@ func _ready():
 	add_child(effectPlayer)
 	musicPlayer.connect("finished", Callable(self, "_on_music_finished"))
 
-func playMusic(music):
-	print(music)
-	
+func playMusic(music):	
 	if music == "":
 		return
 	if music == "first":
@@ -45,6 +44,9 @@ func playMusic(music):
 		currentTrack = ""
 	if music == "victory":
 		musicPlayer.stream = victory
+		currentTrack = ""
+	if music == "tension":
+		musicPlayer.stream = tension
 		currentTrack = ""
 		
 	musicPlayer.play()
