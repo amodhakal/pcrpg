@@ -60,7 +60,7 @@ func _process(delta):
 		var swordChosen = [true, false].pick_random()
 		var chosenTexture = load((swordPaths if swordChosen else gunPaths).pick_random())
 		var chosenHeartsDamaged = 1 if swordChosen else 2
-		var timeForDamage = 0.6 if swordChosen else 0.9
+		var timeForDamage = 0.47 if swordChosen else 0.52
 		
 		currentPirate = Pirate.instantiate()
 		currentPirate.texture = chosenTexture
