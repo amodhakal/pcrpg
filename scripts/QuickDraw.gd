@@ -101,6 +101,7 @@ func handleGameOver() -> void:
 		get_tree().change_scene_to_file(LossPath)
 		return
 	if alexHealth <= 0:
+		AudioManager.playEffect("blood")
 		await get_tree().create_timer(1.0).timeout
 		get_tree().change_scene_to_file(WinPath)
 		return
