@@ -29,13 +29,22 @@ jobs:
           mkdir -p ~/.local/share/godot/export_templates/4.3.stable
           wget -q https://github.com/godotengine/godot-builds/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz -O templates.zip
           unzip -q templates.zip
-          # The tpz extracts to a 'templates' directory containing files like web_nothreads_release.zip, etc.
           mv templates/* ~/.local/share/godot/export_templates/4.3.stable/
 
       - name: Build Web Export
         run: |
           mkdir -p build/web
           godot --headless --verbose --export-release "Web" build/web/index.html
+
+      - name: Remove Symlinks (Fix GitHub Pages Deployment)
+        run: |
+          find build/web -type l | while read symlink; do
+            if [ -e "$symlink" ]; then
+              real_file="$(readlink -f "$symlink")"
+              rm "$symlink"
+              cp -r "$real_file" "$symlink"
+            fi
+          done
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
