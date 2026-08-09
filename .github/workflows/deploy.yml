@@ -11,39 +11,32 @@ permissions:
   pages: write
   id-token: write
 
-env:
-  GODOT_VERSION: "4.3"
-  EXPORT_NAME: "pcrpg"
-  PROJECT_PATH: "."
-
 jobs:
   export-web:
-    name: Web Export
+    name: Web Export & Deploy
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           lfs: true
 
-      - name: Setup Godot
-        uses: firebelley/godot-export@v6.0.0
+      - name: Install Godot
+        uses: chickensoft-games/setup-godot@v2
         with:
-          godot_executable_download_url: https://github.com/godotengine/godot-builds/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip
-          godot_export_templates_download_url: https://github.com/godotengine/godot-builds/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_export_templates.tpz
-          relative_project_path: ${{ env.PROJECT_PATH }}
-          archive_output: false
+          version: 4.3.0-stable
+          use-dotnet: false
 
-      - name: Export Web
-        id: export
-        uses: firebelley/godot-export@v6.0.0
+      - name: Install Godot Export Templates
+        uses: chickensoft-games/setup-godot-export-templates@v2
         with:
-          godot_executable_download_url: https://github.com/godotengine/godot-builds/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip
-          godot_export_templates_download_url: https://github.com/godotengine/godot-builds/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_export_templates.tpz
-          relative_project_path: ${{ env.PROJECT_PATH }}
-          export_name: "Web"
-          export_path: "build/web/index.html"
+          version: 4.3.0-stable
+
+      - name: Build Project for Web
+        run: |
+          mkdir -p build/web
+          godot --headless --verbose --export-release "Web" build/web/index.html
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
