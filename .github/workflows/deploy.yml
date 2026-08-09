@@ -15,25 +15,15 @@ jobs:
   export-web:
     name: Web Export & Deploy
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    container:
+      image: barichello/godot-ci:4.3
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           lfs: true
 
-      - name: Install Godot
-        uses: chickensoft-games/setup-godot@v2
-        with:
-          version: 4.3.0-stable
-          use-dotnet: false
-
-      - name: Install Godot Export Templates
-        uses: chickensoft-games/setup-godot-export-templates@v2
-        with:
-          version: 4.3.0-stable
-
-      - name: Build Project for Web
+      - name: Build Web Export
         run: |
           mkdir -p build/web
           godot --headless --verbose --export-release "Web" build/web/index.html
