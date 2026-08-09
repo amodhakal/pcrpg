@@ -23,6 +23,15 @@ jobs:
         with:
           lfs: true
 
+      - name: Install Export Templates
+        run: |
+          apt-get update && apt-get install -y wget unzip
+          mkdir -p ~/.local/share/godot/export_templates/4.3.stable
+          wget -q https://github.com/godotengine/godot-builds/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz -O templates.zip
+          unzip -q templates.zip
+          # The tpz extracts to a 'templates' directory containing files like web_nothreads_release.zip, etc.
+          mv templates/* ~/.local/share/godot/export_templates/4.3.stable/
+
       - name: Build Web Export
         run: |
           mkdir -p build/web
