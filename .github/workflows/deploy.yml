@@ -36,25 +36,11 @@ jobs:
           mkdir -p build/web
           godot --headless --verbose --export-release "Web" build/web/index.html
 
-      - name: Remove Symlinks (Fix GitHub Pages Deployment)
-        run: |
-          find build/web -type l | while read symlink; do
-            if [ -e "$symlink" ]; then
-              real_file="$(readlink -f "$symlink")"
-              rm "$symlink"
-              cp -r "$real_file" "$symlink"
-            fi
-          done
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: web
           path: build/web
-          retention-days: 7
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: web
